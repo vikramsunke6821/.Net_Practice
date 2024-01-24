@@ -1,0 +1,44 @@
+﻿@model List<EFDemo.Models.EmployeeModel>
+
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>All Employees List using ADO.NET</h2>
+
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Number</th>
+        <th>Update</th>
+        <th>Delete</th> 
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Age</td>
+            <td>@item.Number</td>
+
+            <td> <a button type="button" class="btn btn-dark" asp-area="" asp-controller="Home" asp-action="Put" asp-route-id="@item.Id">Update</a></td>
+
+
+
+            <td> <a button type="button" class="btn btn-danger" asp-area="" asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+
+        </tr>
+       
+
+    }
+    
+
+</table>
+
